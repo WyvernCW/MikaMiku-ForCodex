@@ -1,0 +1,69 @@
+{
+  "name": "mikamiku",
+  "version": "2.0.0",
+  "description": "Supreme intelligence amplification and autonomous engineering skill for software creation, system architecture, frontend design, security hardening, kernel development, game engines, Android custom ROMs, Linux distributions, mobile and desktop applications, full-stack systems, firmware, compilers, and any software project.",
+  "author": {
+    "name": "MikaMiku Project",
+    "email": "wyverncw@gmail.com",
+    "url": "https://github.com/WyvernCW/MikaMiku-For-Codex"
+  },
+  "homepage": "https://github.com/WyvernCW/MikaMiku-For-Codex",
+  "repository": "https://github.com/WyvernCW/MikaMiku-For-Codex",
+  "license": "MIT",
+  "keywords": [
+    "mikamiku",
+    "engineering",
+    "architecture",
+    "security",
+    "design",
+    "build-test-loop",
+    "kernel",
+    "game-engine",
+    "android",
+    "linux",
+    "frontend",
+    "backend",
+    "full-stack",
+    "firmware",
+    "compiler"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "MikaMiku",
+    "shortDescription": "Autonomous hyper-intelligence engine for rigorous software engineering",
+    "longDescription": "MikaMiku transforms Codex into an autonomous engineering entity capable of building anything from a single web component to an entire operating system kernel. It enforces the Build-Test-Loop protocol, maintains perfect context persistence, applies world-class design principles, hardens security by default, and guides mega-project architecture with senior staff engineer expertise.",
+    "developerName": "MikaMiku Project",
+    "category": "Coding and General",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/WyvernCW/MikaMiku-ForCodex",
+    "privacyPolicyURL": "https://github.com/WyvernCW/MikaMiku-ForCodex",
+    "termsOfServiceURL": "https://github.com/WyvernCW/MikaMiku-ForCodex",
+    "defaultPrompt": [
+      "Build me a secure React dashboard with dark mode",
+      "Build a web applications",
+      "Build a desktop applications",
+      "Build a mobile applications",
+      "Make",
+      "Build",
+      "Use",
+      "Test",
+      "Debug",
+      "skill",
+      "skill",
+      "skills",
+      "skills",
+      "Design a Linux kernel module for ARM64",
+      "Create an Android custom ROM with privacy hardening",
+      "Code a game engine in Rust with ECS architecture",
+      "Architect a Linux distribution from scratch"
+    ],
+    "brandColor": "#6366f1",
+    "composerIcon": "./assets/mikamiku-icon.svg",
+    "logo": "./assets/mikamiku-logo.png",
+    "screenshots": []
+  }
+}

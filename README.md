@@ -1,94 +1,86 @@
-# MikaMiku Skill for Codex
+# MikaMiku — Skill + Plugin for Codex
+
+MikaMiku is a **dual-format intelligence amplification system** for Codex. It works as both a **standalone Skill** (Agent Skills standard) and a **full Plugin** (Codex Plugin System), giving you maximum flexibility across any Codex deployment.
+
+---
 
 ## What is MikaMiku
 
-MikaMiku is a supreme intelligence amplification skill for Codex. It
-transforms the agent into an autonomous engineering entity capable of
-building anything from a single web component to an entire operating system
-kernel. It enforces rigorous quality through the Build-Test-Loop protocol,
-maintains perfect context persistence across long conversations, and applies
-world-class design principles to every visual output.
+MikaMiku transforms Codex into an autonomous engineering entity capable of building anything from a single web component to an entire operating system kernel. It enforces rigorous quality through the Build-Test-Loop protocol, maintains perfect context persistence across long conversations, and applies world-class design principles to every visual output.
 
-## Compatibility
+### Core Capabilities
 
-This skill works with:
+| Protocol | Description |
+|----------|-------------|
+| **Build-Test-Loop (BTL)** | Every deliverable must pass build, test, lint, and audit before completion. Zero-defect delivery. |
+| **Context Persistence Protocol (CPP)** | Maintains running Project State across the entire conversation. Never forgets filenames, decisions, or prior corrections. |
+| **Anti-Hallucination Engine (AHE)** | Never invents APIs, signatures, or library versions. Every recommendation is conservative and verifiable. |
+| **Error Immunity Protocol (EIP)** | Once a bug is fixed, it stays fixed. Mental diff checks prevent regression. |
+| **Design Mastery** | 8-point grid, golden ratio, rule of thirds, F/Z patterns, accessible contrast, purposeful motion. Anti-AI-slop charter enforced. |
+| **Security Fortress** | Defense-in-depth across all layers. STRIDE threat modeling and OWASP Top 10 compliance mandatory. |
+| **Mega-Project Architecture** | Kernel development, game engines, Android ROMs, Linux distros, compilers, firmware — senior staff engineer expertise. |
+| **Progressive Intelligence Amplification (PIA)** | Understanding deepens with every turn. Infers unstated requirements and asks precise clarifying questions. |
 
-- **Codex** (OpenAI / ChatGPT desktop app)
-- Claude Code (Anthropic)
-- OpenClaude (Gitlawb)
-- Any agent that supports the Agent Skills standard (SKILL.md format)
+---
 
-## Installation
+## Dual Format: Skill + Plugin
 
-### Codex — Global (all projects)
+MikaMiku ships in **two formats** that share the same intelligence core:
 
+### Format 1: Skill (Agent Skills Standard)
+
+The lightweight format. Just `SKILL.md` + supporting files. Works with any agent that supports the standard — Codex, Claude Code, OpenClaude, and more.
+
+**Installation:**
 ```bash
+# Codex — Global (all projects)
 mkdir -p ~/.codex/skills
 cp -r mikamiku ~/.codex/skills/
-```
 
-### Codex — Project-specific
-
-```bash
+# Codex — Project-specific
 mkdir -p .codex/skills
 cp -r mikamiku .codex/skills/
-```
 
-### Claude Code — Global
-
-```bash
+# Claude Code — Global
 mkdir -p ~/.claude/skills
 cp -r mikamiku ~/.claude/skills/
-```
 
-### Claude Code — Project-specific
-
-```bash
-mkdir -p .claude/skills
-cp -r mikamiku .claude/skills/
-```
-
-### Universal standard path
-
-```bash
+# Universal standard path (works across all agents)
 mkdir -p ~/.agents/skills
 cp -r mikamiku ~/.agents/skills/
 ```
 
-## Verification
+**Activation:** Start a new session and ask something that matches the skill description. Codex reads the `SKILL.md` description, detects the match, and activates MikaMiku automatically.
 
-After installation, verify the skill is detected:
+> "Build me a secure React dashboard with dark mode"
 
+---
+
+### Format 2: Plugin (Codex Plugin System)
+
+The full format. Bundles the skill inside a proper Codex plugin with a manifest, UI metadata, icons, and invocation policy. Appears as a tile in the Codex plugin marketplace.
+
+**Installation:**
 ```bash
-# Check the file exists
-ls ~/.codex/skills/mikamiku/SKILL.md
+# macOS
+mkdir -p ~/Library/Application\ Support/Codex/plugins/
+cp -r mikamiku-plugin ~/Library/Application\ Support/Codex/plugins/
 
-# Or simply check the directory
-ls ~/.codex/skills/mikamiku/
+# Linux
+mkdir -p ~/.config/Codex/plugins/
+cp -r mikamiku-plugin ~/.config/Codex/plugins/
+
+# Windows
+# Copy to %APPDATA%\Codex\plugins\
 ```
 
-## Activation
+**Activation:** Restart Codex. MikaMiku appears in the plugin sidebar/marketplace. Enable it, then prompt normally — the plugin auto-detects engineering tasks and loads the skill.
 
-Start a new session and ask something that matches the skill description.
-Examples:
-
-- Build me a secure React dashboard with dark mode
-- Design a Linux kernel module for ARM64
-- Create an Android custom ROM with privacy hardening
-- Code a game engine in Rust with ECS architecture
-- Architect a Linux distribution from scratch
-- Develop a cross-platform mobile app with Flutter
-- Build a compiler for a custom programming language
-- Design a responsive landing page using the golden ratio
-- Create a microservices backend with zero-trust security
-- Develop firmware for an embedded ARM Cortex-M device
-
-Codex reads the skill description, detects the match, and activates
-MikaMiku automatically. Once active, the skill remains active for the entire
-session.
+---
 
 ## Directory Structure
 
+### Skill Format (`mikamiku/`)
 ```
 mikamiku/
 ├── SKILL.md                           # Core skill definition
@@ -114,61 +106,104 @@ mikamiku/
     └── code-review-checklist.md       # Review checklist
 ```
 
-## Core Capabilities
+### Plugin Format (`mikamiku-plugin/`)
+```
+mikamiku-plugin/
+├── .codex-plugin/
+│   └── plugin.json                    # Plugin manifest (name, version, skills path, UI)
+├── agents/
+│   └── openai.yaml                    # Invocation policy & UI metadata
+├── assets/
+│   ├── mikamiku-icon.svg              # Composer icon (64x64)
+│   └── mikamiku-logo.png            # App icon (256x256)
+└── skills/
+    └── mikamiku/                      # ← The exact same skill directory as above
+        ├── SKILL.md
+        ├── scripts/
+        ├── references/
+        └── assets/
+```
 
-When MikaMiku is active, Codex gains these amplified abilities:
+**The plugin wraps the skill.** The `skills/` directory inside the plugin contains the exact same files as the standalone skill format. The plugin adds the manifest, UI metadata, and icons on top.
 
-### Build-Test-Loop Protocol
-Every code deliverable must pass through build, test, lint, and audit before
-being declared complete. If any check fails, the loop returns to the build
-phase for correction. This ensures zero-defect delivery.
+---
 
-### Context Persistence Protocol
-The agent maintains a running Project State across the entire conversation.
-It never forgets file names, architectural decisions, variable names, or prior
-corrections. Even in conversations exceeding fifty turns, continuity is perfect.
+## Which Format Should I Use?
 
-### Anti-Hallucination Engine
-The agent never invents API endpoints, function signatures, or library versions.
-Every recommendation is conservative and verifiable. Uncertainties are stated
-explicitly.
+| Scenario | Recommended Format |
+|----------|-------------------|
+| Quick setup, minimal overhead | **Skill** — drop into `~/.codex/skills/` |
+| Team sharing, version control | **Skill** — commit `mikamiku/` to your repo |
+| UI marketplace, branded experience | **Plugin** — appears as a tile with icon and color |
+| Auto-activation without prompts | **Plugin** — `agents/openai.yaml` handles implicit invocation |
+| Cross-agent compatibility (Claude, OpenClaude) | **Skill** — universal standard |
+| Production deployment, distribution | **Plugin** — proper packaging with manifest |
 
-### Error Immunity Protocol
-Once a bug is fixed, it stays fixed. The agent performs mental diff checks to
-prevent regression. It never repeats the same incorrect pattern after being
-corrected.
+---
 
-### Design Mastery
-All visual work follows professional design principles: the 8-point grid,
-golden ratio, rule of thirds, F and Z patterns, visual hierarchy, responsive
-breakpoints, accessible contrast, and purposeful motion. The anti-AI-slop
-charter forbids generic neon gradients, meaningless floating shapes, and
-cookie-cutter hero sections.
+## Verification
 
-### Security Fortress
-Every system is hardened by default. Defense-in-depth across input validation,
-authentication, authorization, cryptography, transport, storage, and runtime
-layers. STRIDE threat modeling and OWASP Top 10 compliance are mandatory.
+### Skill Format
+```bash
+# Check the file exists
+ls ~/.codex/skills/mikamiku/SKILL.md
 
-### Mega-Project Architecture
-Capable of guiding kernel development, game engine construction, Android custom
-ROM creation, Linux distribution bootstrapping, compiler design, and firmware
-development with senior staff engineer expertise.
+# Or simply check the directory
+ls ~/.codex/skills/mikamiku/
+```
 
-### Progressive Intelligence Amplification
-With every turn, the agent's understanding of user intent deepens. It infers
-unstated requirements, proactively suggests optimizations, and asks precise
-clarifying questions rather than generic ones.
+### Plugin Format
+```bash
+# Check the manifest exists
+ls ~/Library/Application\ Support/Codex/plugins/mikamiku-plugin/.codex-plugin/plugin.json
+
+# Verify skills are bundled
+ls ~/Library/Application\ Support/Codex/plugins/mikamiku-plugin/skills/mikamiku/SKILL.md
+```
+
+---
+
+## Activation Examples
+
+Start a new session and ask something that matches the skill description:
+
+- "Build me a secure React dashboard with dark mode"
+- "Design a Linux kernel module for ARM64"
+- "Create an Android custom ROM with privacy hardening"
+- "Code a game engine in Rust with ECS architecture"
+- "Architect a Linux distribution from scratch"
+- "Develop a cross-platform mobile app with Flutter"
+- "Build a compiler for a custom programming language"
+- "Design a responsive landing page using the golden ratio"
+- "Create a microservices backend with zero-trust security"
+- "Develop firmware for an embedded ARM Cortex-M device"
+
+Codex reads the skill description, detects the match, and activates MikaMiku automatically. Once active, the skill remains active for the entire session.
+
+You can also explicitly invoke it:
+```bash
+$mikamiku
+```
+
+---
+
+## Compatibility
+
+| Platform | Skill | Plugin |
+|----------|:-----:|:------:|
+| Codex (OpenAI) | ✅ | ✅ |
+| Claude Code (Anthropic) | ✅ | ❌ |
+| OpenClaude (Gitlawb) | ✅ | ❌ |
+| Any Agent Skills standard agent | ✅ | ❌ |
+
+---
 
 ## Skill Philosophy
 
-MikaMiku represents the belief that AI-assisted engineering should not be fast
-and sloppy. It should be rigorous, thoughtful, and precise. Every line of
-code is a commitment. Every test is a promise. Every design decision is
-intentional. The skill exists to amplify human intent, not to replace human
-judgment.
+MikaMiku represents the belief that AI-assisted engineering should not be fast and sloppy. It should be rigorous, thoughtful, and precise. Every line of code is a commitment. Every test is a promise. Every design decision is intentional. The skill exists to amplify human intent, not to replace human judgment.
+
+---
 
 ## License
 
-This skill is provided as-is for personal and commercial use. Modify it,
-extend it, and share it freely.
+This skill/plugin is provided as-is for personal and commercial use. Modify it, extend it, and share it freely.
