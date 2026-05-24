@@ -65,5 +65,91 @@
     "composerIcon": "./assets/mikamiku-icon.svg",
     "logo": "./assets/mikamiku-logo.png",
     "screenshots": []
+  },
+  "id": "mikamiku",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "buildTestLoopEnabled": {
+        "type": "boolean",
+        "default": true,
+        "description": "Enable the Build-Test-Loop protocol"
+      },
+      "securityLevel": {
+        "type": "string",
+        "enum": [
+          "standard",
+          "hardened",
+          "paranoid"
+        ],
+        "default": "hardened",
+        "description": "Security posture level"
+      },
+      "designMode": {
+        "type": "string",
+        "enum": [
+          "dark-first",
+          "light-first",
+          "system"
+        ],
+        "default": "dark-first",
+        "description": "Default design mode for visual outputs"
+      }
+    }
+  },
+  "enabledByDefault": true,
+  "channels": [
+    "coding",
+    "engineering",
+    "architecture"
+  ],
+  "providers": [
+    "mikamiku-engineering"
+  ],
+  "activation": {
+    "onStartup": false,
+    "onProviders": [
+      "mikamiku-engineering"
+    ],
+    "onCommands": [
+      "build",
+      "test",
+      "debug",
+      "design",
+      "architect"
+    ],
+    "onChannels": [
+      "coding",
+      "engineering"
+    ],
+    "onConfigPaths": [
+      "mikamiku"
+    ]
+  },
+  "contracts": {
+    "tools": [
+      "build-test-loop",
+      "tech-stack-detect",
+      "security-scan",
+      "architecture-validate"
+    ]
+  },
+  "uiHints": {
+    "buildTestLoopEnabled": {
+      "label": "Build-Test-Loop",
+      "help": "Automatically run build, test, lint, and audit on every code change",
+      "advanced": false
+    },
+    "securityLevel": {
+      "label": "Security Level",
+      "help": "Choose the security hardening level for generated code",
+      "advanced": true
+    },
+    "designMode": {
+      "label": "Design Mode",
+      "help": "Default color scheme for visual outputs",
+      "advanced": false
+    }
   }
 }
