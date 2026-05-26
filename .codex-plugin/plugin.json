@@ -1,0 +1,261 @@
+{
+  "name": "mikamiku",
+  "version": "2.0.0",
+  "description": "Supreme intelligence amplification and autonomous engineering skill for software creation, system architecture, frontend design, security hardening, kernel development, game engines, Android custom ROMs, Linux distributions, mobile and desktop applications, full-stack systems, firmware, compilers, and any software project.",
+  "author": {
+    "name": "MikaMiku Project",
+    "email": "wyverncw@gmail.com",
+    "url": "https://github.com/WyvernCW/MikaMiku-For-Codex"
+  },
+  "homepage": "https://github.com/WyvernCW/MikaMiku-For-Codex",
+  "repository": "https://github.com/WyvernCW/MikaMiku-For-Codex",
+  "license": "MIT",
+  "keywords": [
+    "mikamiku",
+    "engineering",
+    "architecture",
+    "security",
+    "design",
+    "build-test-loop",
+    "kernel",
+    "game-engine",
+    "android",
+    "linux",
+    "frontend",
+    "backend",
+    "full-stack",
+    "firmware",
+    "compiler"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "MikaMiku",
+    "shortDescription": "Autonomous hyper-intelligence engine for rigorous software engineering",
+    "longDescription": "MikaMiku transforms Codex into an autonomous engineering entity capable of building anything from a single web component to an entire operating system kernel. It enforces the Build-Test-Loop protocol, maintains perfect context persistence, applies world-class design principles, hardens security by default, and guides mega-project architecture with senior staff engineer expertise.",
+    "developerName": "MikaMiku Project",
+    "category": "Coding and General",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/WyvernCW/MikaMiku-ForCodex",
+    "privacyPolicyURL": "https://github.com/WyvernCW/MikaMiku-ForCodex",
+    "termsOfServiceURL": "https://github.com/WyvernCW/MikaMiku-ForCodex",
+    "defaultPrompt": [
+      "Build me a secure React dashboard with dark mode",
+      "Build a web applications",
+      "Build a desktop applications",
+      "Build a mobile applications",
+      "Make",
+      "Build",
+      "Use",
+      "Test",
+      "Debug",
+      "skill",
+      "skill",
+      "skills",
+      "skills",
+      "Design a Linux kernel module for ARM64",
+      "Create an Android custom ROM with privacy hardening",
+      "Code a game engine in Rust with ECS architecture",
+      "Architect a Linux distribution from scratch"
+    ],
+    "brandColor": "#6366f1",
+    "composerIcon": "./assets/mikamiku-icon.svg",
+    "logo": "./assets/mikamiku-logo.png",
+    "screenshots": []
+  },
+  "id": "mikamiku",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "buildTestLoopEnabled": {
+        "type": "boolean",
+        "default": true,
+        "description": "Enable the Build-Test-Loop protocol"
+      },
+      "securityLevel": {
+        "type": "string",
+        "enum": [
+          "standard",
+          "hardened",
+          "paranoid"
+        ],
+        "default": "hardened",
+        "description": "Security posture level"
+      },
+      "designMode": {
+        "type": "string",
+        "enum": [
+          "dark-first",
+          "light-first",
+          "system"
+        ],
+        "default": "dark-first",
+        "description": "Default design mode for visual outputs"
+      }
+    }
+  },
+  "enabledByDefault": true,
+  "channels": [
+    "coding",
+    "engineering",
+    "architecture"
+  ],
+  "providers": [
+    "mikamiku-engineering"
+  ],
+  "activation": {
+    "onStartup": false,
+    "onProviders": [
+      "mikamiku-engineering"
+    ],
+    "onCommands": [
+      "build",
+      "test",
+      "debug",
+      "design",
+      "architect"
+    ],
+    "onChannels": [
+      "coding",
+      "engineering"
+    ],
+    "onConfigPaths": [
+      "mikamiku"
+    ]
+  },
+  "contracts": {
+    "tools": [
+      "build-test-loop",
+      "tech-stack-detect",
+      "security-scan",
+      "architecture-validate"
+    ]
+  },
+  "uiHints": {
+    "buildTestLoopEnabled": {
+      "label": "Build-Test-Loop",
+      "help": "Automatically run build, test, lint, and audit on every code change",
+      "advanced": false
+    },
+    "securityLevel": {
+      "label": "Security Level",
+      "help": "Choose the security hardening level for generated code",
+      "advanced": true
+    },
+    "designMode": {
+      "label": "Design Mode",
+      "help": "Default color scheme for visual outputs",
+      "advanced": false
+    }
+  },
+  "opencode": {
+    "plugin": {
+      "type": "skill",
+      "commands": [
+        "mikamiku"
+      ],
+      "hooks": {
+        "session_start": {
+          "inject": "skills/mikamiku/SKILL.md"
+        }
+      },
+      "skills": [
+        "./skills/mikamiku/"
+      ],
+      "tools": {
+        "build-test-loop": {
+          "description": "Run build, test, lint, and audit",
+          "script": "scripts/build-test-loop.js"
+        },
+        "detect-tech-stack": {
+          "description": "Auto-detect project technology stack",
+          "script": "scripts/detect-tech-stack.js"
+        },
+        "security-check": {
+          "description": "Static security analysis",
+          "script": "scripts/security-check.py"
+        },
+        "validate-architecture": {
+          "description": "Validate project architecture",
+          "script": "scripts/validate-architecture.js"
+        }
+      }
+    }
+  },
+  "openclaude": {
+    "plugin": {
+      "type": "skill",
+      "skills": [
+        "./skills/mikamiku/"
+      ],
+      "activation": {
+        "onStartup": false,
+        "onPromptMatch": [
+          "build",
+          "create",
+          "code",
+          "design",
+          "architect",
+          "develop",
+          "app",
+          "game",
+          "engine",
+          "kernel",
+          "ROM",
+          "distro",
+          "OS",
+          "android",
+          "linux",
+          "webapp",
+          "website",
+          "frontend",
+          "backend",
+          "API",
+          "database",
+          "infrastructure",
+          "DevOps",
+          "CI/CD",
+          "compiler",
+          "firmware",
+          "bootloader",
+          "script",
+          "program",
+          "software",
+          "system",
+          "hack",
+          "exploit",
+          "harden",
+          "secure",
+          "optimize",
+          "refactor",
+          "debug",
+          "test",
+          "deploy",
+          "mobile",
+          "desktop",
+          "cross-platform",
+          "responsive",
+          "UI",
+          "UX",
+          "interface",
+          "layout",
+          "composition",
+          "visual",
+          "graphic",
+          "animation",
+          "motion",
+          "interaction"
+        ]
+      },
+      "config": {
+        "buildTestLoopEnabled": true,
+        "securityLevel": "hardened",
+        "designMode": "dark-first"
+      }
+    }
+  }
+}
