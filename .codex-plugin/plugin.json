@@ -151,7 +151,6 @@
       "help": "Default color scheme for visual outputs",
       "advanced": false
     }
-<<<<<<< HEAD
   },
   "opencode": {
     "plugin": {
@@ -258,7 +257,94 @@
         "designMode": "dark-first"
       }
     }
-=======
->>>>>>> f34f2cb6ed3da4148cebd47e42adc7bbd852a092
+  },
+  "kilo": {
+    "plugin": {
+      "type": "skill",
+      "skills": [
+        "./skills/mikamiku/"
+      ],
+      "compatibility": {
+        "agents": [
+          "kilo-code",
+          "kiro"
+        ],
+        "modes": [
+          "code",
+          "architect",
+          "debug"
+        ],
+        "directories": [
+          "~/.kilo/skills/",
+          "~/.kilocode/skills/",
+          ".kilo/skills/",
+          ".kilocode/skills/"
+        ]
+      },
+      "activation": {
+        "onStartup": false,
+        "onPromptMatch": [
+          "build",
+          "create",
+          "code",
+          "design",
+          "architect",
+          "develop",
+          "app",
+          "game",
+          "engine",
+          "kernel",
+          "ROM",
+          "distro",
+          "OS",
+          "android",
+          "linux",
+          "webapp",
+          "website",
+          "frontend",
+          "backend",
+          "API",
+          "database",
+          "infrastructure",
+          "DevOps",
+          "CI/CD",
+          "compiler",
+          "firmware",
+          "bootloader",
+          "script",
+          "program",
+          "software",
+          "system",
+          "hack",
+          "exploit",
+          "harden",
+          "secure",
+          "optimize",
+          "refactor",
+          "debug",
+          "test",
+          "deploy",
+          "mobile",
+          "desktop",
+          "cross-platform",
+          "responsive",
+          "UI",
+          "UX",
+          "interface",
+          "layout",
+          "composition",
+          "visual",
+          "graphic",
+          "animation",
+          "motion",
+          "interaction"
+        ]
+      },
+      "config": {
+        "buildTestLoopEnabled": true,
+        "securityLevel": "hardened",
+        "designMode": "dark-first"
+      }
+    }
   }
 }
