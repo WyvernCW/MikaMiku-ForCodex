@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 # MikaMiku — Universal Plugin for Codex + Antigravity + OpenCode + OpenClaude
 
 MikaMiku is a **cross-platform intelligence amplification system** that works as a **unified plugin** for **Codex (OpenAI)**, **Antigravity (Google)**, **OpenCode**, and **OpenClaude**. It transforms your AI agent into an autonomous engineering entity capable of building anything from a single web component to an entire operating system kernel.
+=======
+# MikaMiku — Unified Plugin for Codex + Antigravity
+
+MikaMiku is a **cross-platform intelligence amplification system** that works as a **unified plugin** for both **Codex (OpenAI)** and **Antigravity (Google)**. It transforms your AI agent into an autonomous engineering entity capable of building anything from a single web component to an entire operating system kernel.
+>>>>>>> f34f2cb6ed3da4148cebd47e42adc7bbd852a092
 
 ---
 
@@ -25,6 +31,7 @@ MikaMiku enforces rigorous quality through the Build-Test-Loop protocol, maintai
 
 ## Cross-Platform Compatibility
 
+<<<<<<< HEAD
 | Platform | Plugin System | Manifest File | Installation Path |
 |----------|--------------|---------------|-------------------|
 | **Codex** (OpenAI) | Codex Plugin | `.codex-plugin/plugin.json` | `~/.codex/plugins/` or `.codex/plugins/` |
@@ -32,6 +39,16 @@ MikaMiku enforces rigorous quality through the Build-Test-Loop protocol, maintai
 | **OpenCode** | OpenCode Plugin | `.opencode/opencode.json` | `~/.opencode/plugins/` or `<workspace>/.opencode/plugins/` |
 | **OpenClaude** (Gitlawb) | OpenClaude Plugin | `.openclaude/openclaude.plugin.json` | `~/.openclaude/plugins/` or `<workspace>/.openclaude/plugins/` |
 | **Claude Code** (Anthropic) | Agent Skills | `skills/mikamiku/SKILL.md` | `~/.claude/skills/` or `.claude/skills/` |
+=======
+This plugin is designed to work with **both** Codex and Antigravity using a unified manifest format.
+
+| Platform | Plugin System | Installation Path |
+|----------|--------------|-------------------|
+| **Codex** (OpenAI) | `.codex-plugin/plugin.json` | `~/.codex/plugins/` or `.codex/plugins/` |
+| **Antigravity** (Google) | `plugin.json` (root) | `~/.gemini/antigravity/plugins/` or `<workspace>/.agent/plugins/` |
+| **Claude Code** (Anthropic) | Agent Skills standard | `~/.claude/skills/` or `.claude/skills/` |
+| **OpenClaw** | `openclaw.plugin.json` | `~/.openclaw/plugins/` |
+>>>>>>> f34f2cb6ed3da4148cebd47e42adc7bbd852a092
 
 ---
 
@@ -65,6 +82,7 @@ cp -r mikamiku-unified-plugin .agent/plugins/
 
 Restart Antigravity. The skill auto-activates on engineering prompts.
 
+<<<<<<< HEAD
 ### OpenCode
 
 ```bash
@@ -93,6 +111,8 @@ cp -r mikamiku-unified-plugin .openclaude/plugins/
 
 Restart OpenClaude. The plugin auto-activates on prompt keywords.
 
+=======
+>>>>>>> f34f2cb6ed3da4148cebd47e42adc7bbd852a092
 ### Claude Code (Anthropic) — Skill Mode
 
 ```bash
@@ -119,6 +139,7 @@ cp -r mikamiku-unified-plugin/skills/mikamiku ~/.agents/skills/
 ```
 mikamiku-unified-plugin/
 ├── .codex-plugin/
+<<<<<<< HEAD
 │   └── plugin.json              # Unified manifest (Codex + Antigravity + OpenCode + OpenClaude)
 ├── .opencode/
 │   └── opencode.json            # OpenCode plugin manifest
@@ -126,6 +147,11 @@ mikamiku-unified-plugin/
 │   └── openclaude.plugin.json   # OpenClaude plugin manifest
 ├── agents/
 │   └── openai.yaml              # Invocation policy & UI metadata (Codex/Claude Code)
+=======
+│   └── plugin.json              # Unified manifest (Codex + Antigravity compatible)
+├── agents/
+│   └── openai.yaml              # Invocation policy & UI metadata
+>>>>>>> f34f2cb6ed3da4148cebd47e42adc7bbd852a092
 ├── assets/
 │   ├── mikamiku-icon.svg        # Composer icon (64x64)
 │   └── mikamiku-logo.png        # App icon (256x256)
@@ -158,7 +184,11 @@ mikamiku-unified-plugin/
 
 ## How the Unified Manifest Works
 
+<<<<<<< HEAD
 The `plugin.json` in `.codex-plugin/` contains **all four** platform formats in one file:
+=======
+The `plugin.json` in `.codex-plugin/` contains **both** Codex-native fields and Antigravity-compatible fields:
+>>>>>>> f34f2cb6ed3da4148cebd47e42adc7bbd852a092
 
 ### Codex-Native Fields (preserved)
 - `name`, `version`, `description`
@@ -169,6 +199,7 @@ The `plugin.json` in `.codex-plugin/` contains **all four** platform formats in 
 - `interface.defaultPrompt`, `interface.brandColor`
 - `interface.composerIcon`, `interface.logo`
 
+<<<<<<< HEAD
 ### Antigravity-Compatible Fields
 - `id`, `configSchema`, `enabledByDefault`
 - `channels`, `providers`, `activation`
@@ -185,6 +216,19 @@ The `plugin.json` in `.codex-plugin/` contains **all four** platform formats in 
 - `openclaude.plugin.config`
 
 Each platform reads only the fields it understands and ignores the rest. Platform-specific manifests in `.opencode/` and `.openclaude/` provide fallback compatibility.
+=======
+### Antigravity-Compatible Fields (added)
+- `id` — canonical plugin identifier
+- `configSchema` — JSON Schema for plugin configuration (buildTestLoopEnabled, securityLevel, designMode)
+- `enabledByDefault` — auto-enable on install
+- `channels` — plugin channels (coding, engineering, architecture)
+- `providers` — provider ownership metadata
+- `activation` — when to auto-activate (on commands, channels, config paths)
+- `contracts.tools` — tool ownership declarations
+- `uiHints` — UI rendering hints for config fields
+
+Both platforms read the same manifest. Codex ignores Antigravity-specific fields. Antigravity ignores Codex-specific fields. The skill content in `skills/mikamiku/` is identical across both.
+>>>>>>> f34f2cb6ed3da4148cebd47e42adc7bbd852a092
 
 ---
 
@@ -226,6 +270,7 @@ When installed as a plugin, you can configure:
 
 ## Compatibility Matrix
 
+<<<<<<< HEAD
 | Feature | Codex | Antigravity | OpenCode | OpenClaude | Claude Code |
 |---------|:-----:|:-----------:|:--------:|:----------:|:-----------:|
 | Plugin manifest | ✅ | ✅ | ✅ | ✅ | ❌ |
@@ -236,6 +281,16 @@ When installed as a plugin, you can configure:
 | Tool contracts | ✅ | ⚠️ partial | ⚠️ partial | ⚠️ partial | ❌ |
 | Session hooks | ❌ | ❌ | ✅ | ❌ | ❌ |
 | Prompt keyword matching | ✅ | ✅ | ✅ | ✅ | ✅ |
+=======
+| Feature | Codex | Antigravity | Claude Code | OpenClaw |
+|---------|:-----:|:-----------:|:-----------:|:--------:|
+| Plugin manifest | ✅ | ✅ | ❌ | ✅ |
+| Auto-activation | ✅ | ✅ | ✅ | ✅ |
+| Skill format | ✅ | ✅ | ✅ | ✅ |
+| Config schema | ✅ | ✅ | ❌ | ✅ |
+| UI hints | ✅ | ⚠️ partial | ❌ | ✅ |
+| Tool contracts | ✅ | ⚠️ partial | ❌ | ✅ |
+>>>>>>> f34f2cb6ed3da4148cebd47e42adc7bbd852a092
 
 ---
 

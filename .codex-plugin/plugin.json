@@ -151,6 +151,7 @@
       "help": "Default color scheme for visual outputs",
       "advanced": false
     }
+<<<<<<< HEAD
   },
   "opencode": {
     "plugin": {
@@ -257,5 +258,7 @@
         "designMode": "dark-first"
       }
     }
+=======
+>>>>>>> f34f2cb6ed3da4148cebd47e42adc7bbd852a092
   }
 }
