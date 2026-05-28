@@ -1,0 +1,26 @@
+{
+  "name": "mikamiku",
+  "version": "2.0.0",
+  "description": "Supreme intelligence amplification and autonomous engineering skill for software creation, system architecture, frontend design, security hardening, kernel development, game engines, Android custom ROMs, Linux distributions, mobile and desktop applications, full-stack systems, firmware, compilers, and any software project.",
+  "author": "MikaMiku Project",
+  "license": "MIT",
+  "skills": [
+    "./skills/mikamiku/"
+  ],
+  "plugin": {
+    "type": "skill",
+    "commands": [
+      "mikamiku"
+    ],
+    "hooks": {
+      "session_start": {
+        "inject": "skills/mikamiku/SKILL.md"
+      }
+    }
+  },
+  "config": {
+    "buildTestLoopEnabled": true,
+    "securityLevel": "hardened",
+    "designMode": "dark-first"
+  }
+}

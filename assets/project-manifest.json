@@ -1,0 +1,44 @@
+{
+  "name": "{{PROJECT_NAME}}",
+  "version": "1.0.0",
+  "description": "{{PROJECT_DESCRIPTION}}",
+  "type": "{{PROJECT_TYPE}}",
+  "architecture": {
+    "pattern": "{{ARCH_PATTERN}}",
+    "scale": "{{SCALE}}"
+  },
+  "security": {
+    "threat_model": "pending",
+    "owasp_compliant": false,
+    "audit_date": null
+  },
+  "quality_gates": {
+    "test_coverage_min": 80,
+    "cyclomatic_complexity_max": 10,
+    "function_lines_max": 50,
+    "file_lines_max": 400,
+    "nesting_depth_max": 4
+  },
+  "build_test_loop": {
+    "enabled": true,
+    "build_command": "{{BUILD_CMD}}",
+    "test_command": "{{TEST_CMD}}",
+    "lint_command": "{{LINT_CMD}}",
+    "audit_command": "{{AUDIT_CMD}}"
+  },
+  "tech_stack": {
+    "languages": [],
+    "frameworks": [],
+    "databases": [],
+    "infrastructure": []
+  },
+  "decision_log": [],
+  "design_system": {
+    "mode": "dark-first",
+    "grid": "12-column",
+    "base_unit": "8px",
+    "typography_scale": "major-third",
+    "primary_color": "{{PRIMARY}}",
+    "accent_color": "{{ACCENT}}"
+  }
+}

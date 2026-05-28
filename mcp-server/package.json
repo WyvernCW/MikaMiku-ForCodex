@@ -1,0 +1,24 @@
+{
+  "name": "mikamiku-mcp-server",
+  "version": "2.0.0",
+  "description": "MikaMiku Model Context Protocol Server",
+  "type": "module",
+  "main": "build/server.js",
+  "bin": {
+    "mikamiku-mcp": "./build/server.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "start": "node build/server.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.1",
+    "adm-zip": "^0.5.10"
+  },
+  "devDependencies": {
+    "@types/adm-zip": "^0.5.5",
+    "@types/node": "^20.11.24",
+    "typescript": "^5.3.3"
+  }
+}
