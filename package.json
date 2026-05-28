@@ -1,0 +1,13 @@
+{
+  "name": "mikamiku-unified-plugin",
+  "version": "2.0.0",
+  "description": "MikaMiku Unified Plugin and MCP Server",
+  "type": "module",
+  "bin": {
+    "mikamiku-mcp": "./mcp-server/build/server.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.1",
+    "adm-zip": "^0.5.10"
+  }
+}
